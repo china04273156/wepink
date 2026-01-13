@@ -2,19 +2,35 @@
   "version": 2,
   "name": "wepink",
   "public": true,
-  "buildCommand": "cd client && pnpm build && cd ../server && pnpm build",
-  "outputDirectory": "dist",
-  "framework": "other",
-  "env": [
-    "DATABASE_URL",
-    "JWT_SECRET",
-    "NODE_ENV"
-  ],
+  "buildCommand": "pnpm build",
+  "outputDirectory": "dist/public",
+  "framework": "vite",
+  "env": {
+    "DATABASE_URL": {
+      "description": "URL do banco de dados"
+    },
+    "JWT_SECRET": {
+      "description": "Secret para JWT"
+    },
+    "NODE_ENV": {
+      "description": "Ambiente (production/development)"
+    }
+  },
   "regions": ["iad1"],
   "functions": {
-    "server/index.ts": {
+    "api/**": {
       "memory": 1024,
       "maxDuration": 60
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/index.html"
+    }
+  ]
 }
