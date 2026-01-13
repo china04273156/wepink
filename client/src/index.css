@@ -1,0 +1,211 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Century Gothic", Montserrat, sans-serif;
+  --font-sans: Montserrat, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Pink Glamour Palette */
+  /* Hot Pink: oklch(0.6 0.25 350) */
+  /* Deep Black: oklch(0.15 0 0) */
+  /* Metallic Gold: oklch(0.8 0.15 85) */
+  
+  --primary: oklch(0.6 0.27 340); /* Vibrant Hot Pink (#FF0099 equivalent) */
+  --primary-foreground: oklch(1 0 0);
+  
+  --secondary: oklch(0.96 0.04 340); /* Soft Pink */
+  --secondary-foreground: oklch(0.3 0.1 340);
+  
+  --accent: oklch(0.8 0.15 85); /* Gold */
+  --accent-foreground: oklch(0.2 0.05 85);
+  
+  --background: oklch(0.99 0.005 350); /* Almost White with pink tint */
+  --foreground: oklch(0.15 0.02 350); /* Deep Black/Purple */
+  
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.02 350);
+  
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.02 350);
+  
+  --muted: oklch(0.97 0.01 350);
+  --muted-foreground: oklch(0.55 0.05 350);
+  
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  
+  --border: oklch(0.92 0.02 350);
+  --input: oklch(0.92 0.02 350);
+  --ring: oklch(0.6 0.25 350);
+  
+  --radius: 1rem; /* More rounded for "Pill" look */
+  
+  --chart-1: oklch(0.6 0.25 350);
+  --chart-2: oklch(0.5 0.25 350);
+  --chart-3: oklch(0.4 0.25 350);
+  --chart-4: oklch(0.3 0.25 350);
+  --chart-5: oklch(0.2 0.25 350);
+  
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.15 0.02 350);
+  --sidebar-primary: oklch(0.6 0.25 350);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.95 0.05 350);
+  --sidebar-accent-foreground: oklch(0.3 0.1 350);
+  --sidebar-border: oklch(0.92 0.02 350);
+  --sidebar-ring: oklch(0.6 0.25 350);
+}
+
+.dark {
+  --background: oklch(0.1 0.02 350); /* Deep Dark Purple/Black */
+  --foreground: oklch(0.98 0.01 350);
+  
+  --card: oklch(0.15 0.03 350);
+  --card-foreground: oklch(0.98 0.01 350);
+  
+  --popover: oklch(0.15 0.03 350);
+  --popover-foreground: oklch(0.98 0.01 350);
+  
+  --primary: oklch(0.65 0.27 340); /* Brighter Hot Pink for dark mode */
+  --primary-foreground: oklch(1 0 0);
+  
+  --secondary: oklch(0.25 0.1 340);
+  --secondary-foreground: oklch(0.98 0.01 340);
+  
+  --muted: oklch(0.2 0.05 350);
+  --muted-foreground: oklch(0.7 0.05 350);
+  
+  --accent: oklch(0.8 0.15 85);
+  --accent-foreground: oklch(0.2 0.05 85);
+  
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.985 0 0);
+  
+  --border: oklch(0.25 0.05 350);
+  --input: oklch(0.25 0.05 350);
+  --ring: oklch(0.65 0.25 350);
+  
+  --sidebar: oklch(0.15 0.03 350);
+  --sidebar-foreground: oklch(0.98 0.01 350);
+  --sidebar-primary: oklch(0.65 0.25 350);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.25 0.1 350);
+  --sidebar-accent-foreground: oklch(0.98 0.01 350);
+  --sidebar-border: oklch(0.25 0.05 350);
+  --sidebar-ring: oklch(0.65 0.25 350);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+  
+  /* Custom Utilities for Pink Glamour */
+  .text-outline {
+    -webkit-text-stroke: 1px currentColor;
+    color: transparent;
+  }
+  
+  .text-outline-sm {
+    -webkit-text-stroke: 0.5px currentColor;
+    color: transparent;
+  }
+  
+  .glass-panel {
+    @apply bg-white/80 dark:bg-black/80 backdrop-blur-md border border-white/20 dark:border-white/10;
+  }
+  
+  .btn-glow {
+    @apply shadow-[0_0_15px_rgba(255,0,128,0.3)] hover:shadow-[0_0_25px_rgba(255,0,128,0.5)] transition-shadow duration-300;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1400px; /* Wider container for immersive feel */
+    }
+  }
+}

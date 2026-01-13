@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "name": "wepink",
+  "public": true,
+  "buildCommand": "cd client && pnpm build && cd ../server && pnpm build",
+  "outputDirectory": "dist",
+  "framework": "other",
+  "env": [
+    "DATABASE_URL",
+    "JWT_SECRET",
+    "NODE_ENV"
+  ],
+  "regions": ["iad1"],
+  "functions": {
+    "server/index.ts": {
+      "memory": 1024,
+      "maxDuration": 60
+    }
+  }
+}
